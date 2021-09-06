@@ -19,7 +19,8 @@ var secondi = 2;
 
 
 var numeriUtente =[];
-
+var numeriCorretti =[];
+var checkNum= 0;
 clock = setInterval(function() {
     if(secondi == -1){
         clearInterval(clock);
@@ -27,17 +28,28 @@ clock = setInterval(function() {
             numeriUtente.push(parseInt(prompt("inserisci inumeri visualizzati")))
             console.log(numeriUtente);
         }
-        if(numeriCasuali === numeriUtente){
-        alert("hai vinto")
-        }else{
-            alert("hai perso")
+        for(i= 0; i<5; i++){
+            console.log(numeriUtente[i]);
+            if(numeriCasuali.includes(numeriUtente[i])){
+                checkNum++;
+                numeriCorretti.push(numeriUtente[i]);
+            
+            }
         }
+        if(checkNum == 5){
+            alert ("hai vinto");
+        }else{
+            alert( "hai perso");
+        }
+        console.log("numeri casuali", numeriCasuali);
+        console.log(" numeri corretti", numeriCorretti);
+        console.log("check",checkNum);
     }
     console.log(secondi);
     secondi--;
+    
 }, 1000
 );
-console.log(numeriCasuali);
 
 // var newString ="";
 //     for (var i = string.length - 1; i >= 0; i--) { 
