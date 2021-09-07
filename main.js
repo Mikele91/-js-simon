@@ -7,7 +7,7 @@ function randomNumber(min, max){
 var numeriCasuali = [];
 
 while(numeriCasuali.length< 5){
-    var numeroGenerato = randomNumber(1, 5)
+    var numeroGenerato = randomNumber(1, 100)
     if(!numeriCasuali.includes(numeroGenerato)){
         
         numeriCasuali.push(numeroGenerato);
@@ -15,7 +15,7 @@ while(numeriCasuali.length< 5){
     
 }
 alert(numeriCasuali);
-var secondi = 2; 
+var secondi = 30; 
 
 
 var numeriUtente =[];
@@ -25,12 +25,12 @@ clock = setInterval(function() {
     if(secondi == -1){
         clearInterval(clock);
         for(i= 0; i<5; i++){
-            numeriUtente.push(parseInt(prompt("inserisci inumeri visualizzati")))
+            numeriUtente.push(parseInt(prompt("inserisci i numeri visualizzati")))
             console.log(numeriUtente);
         }
         for(i= 0; i<5; i++){
             console.log(numeriUtente[i]);
-            if(numeriCasuali.includes(numeriUtente[i])){
+            if(numeriCasuali.includes(numeriUtente[i])&& !numeriCorretti.includes(numeriUtente[i])){
                 checkNum++;
                 numeriCorretti.push(numeriUtente[i]);
             
@@ -51,18 +51,9 @@ clock = setInterval(function() {
 }, 1000
 );
 
-// var newString ="";
-//     for (var i = string.length - 1; i >= 0; i--) { 
-//         newString += string[i]; // or newString = newString + string[i]; 
-        
-//     }
-//     if(string == newString){
-//         return  true;
-//     }else{
-//         return false
-//     }
 
 
 // Da li parte un timer di 30 secondi.
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
